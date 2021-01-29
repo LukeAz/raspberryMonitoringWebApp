@@ -1,0 +1,13 @@
+[Unit]
+Description=raspberryMonitoringWebApp
+
+[Service]
+Restart=on-failure
+RestartSec=5s
+Type=simple
+User=root
+WorkingDirectory=/home/user/desktop/raspberryMonitoringWebApp
+ExecStart=npm start
+
+[Install]
+WantedBy=multi-user.target

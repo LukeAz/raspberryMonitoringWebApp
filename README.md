@@ -12,6 +12,8 @@ It was developed using the express framework.
 This script uses vsgencmd, firmware present by default on raspberry. In case it is not present you can find the pre compiled on the official repository of raspberry pi (https://github.com/raspberrypi/firmware/tree/master/hardfp/opt/vc).
 You must download the vcgencmd file and insert it in '/opt/vc/bin/vcgencmd'.
 
+![Layout](https://github.com/LukeAz/raspberryMonitoringWebApp/blob/main/img/layout.png)
+
 ## Technologies
 Project is created with:
 * Express Nodejs

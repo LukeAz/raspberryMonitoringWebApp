@@ -1,0 +1,6 @@
+{
+    "EXPRESS_PORT" : "7845",
+    "WS_PORT" : "8280",
+    "HOST" : "127.0.0.1",
+    "MAX_TEMP" : 50
+}

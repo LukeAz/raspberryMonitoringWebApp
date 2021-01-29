@@ -1,0 +1,115 @@
+<!--
+ * License: MIT
+ * LukeAz => https://github.com/LukeAz
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/icon.png" type="image/icon type">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrapCustom.css">
+    <script src="/js/Chart.min.js"></script>
+    <title>Raspberry Monitoring WebApp</title>
+</head>
+<body>
+
+    <!--TITLE-->
+    <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="/img/icon.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        Raspberry Monitoring WebApp
+    </a>
+    </nav>
+
+
+    <div class="row">
+        <div class="">
+          <div class="nav flex-column nav-pills justify-content-center bg-light" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link whiteBar active" id="temp-tab" data-toggle="pill" href="#temp" role="tab" aria-controls="temp" aria-selected="true"> <img src="/img/temp.png" width="30" height="30" alt="Temperature"> </a>
+            <a class="nav-link whiteBar" id="setting-tab" data-toggle="pill" href="#setting" role="tab" aria-controls="setting" aria-selected="false"> <img src="/img/setting.png" width="30" height="30" alt="Setting"> </a>
+            <a class="nav-link whiteBar" id="info-tab" data-toggle="pill" href="#info" role="tab" aria-controls="info" aria-selected="false"> <img src="/img/info.png" width="30" height="30" alt="Information"> </a>
+          </div>
+        </div>
+        
+        <div class="col lightBody">
+
+          <div class="tab-content text-dark" id="v-pills-tabContent">
+            <div class="tab-pane fade show active text-center mt-3" id="temp" role="tabpanel" aria-labelledby="temp-tab" style="word-break: break-all">
+              <div class="row m-auto">  
+                <div class="col shadow-sm mytab">  
+                  <h4 class="text-left"><b>Info</b></h4>
+                  <h6 class="text-left"><b>Websocket: </b><i id="ws"><%= ws %></i></h6>
+                  <h6 class="text-left"><b>System info: </b><i id="sysInfo"><%= sysInfo %></i></h6>
+                  <h6 class="text-left"><b>Uptime: </b><i id="uptime"></i></h6>
+                  <h6 class="text-left"><b>CPU model: </b><i id="cpuModel"><%= cpuModel %></i></h6>
+                  <h6 class="text-left"><b>CPU thread: </b><i id="cpuThread"><%= cpuThread %></i></h6>
+                  <h6 class="text-left"><b>Maximum temperature setted: </b><i id="settingMaxTemp"><%= maxTemp %></i>°C</h6>
+                  <h6 class="text-left"><b>Maximum temperature reached: </b><i id="maxTemperature"></i></h6>
+                  <h6 class="text-left"><b>Num process: </b><i id="numProcess"></i></h6>
+                  <h6 class="text-left"><b>Total ram: </b><i id="totMem"></i></h6>
+                  <h6 class="text-left"><b>Free ram: </b><i id="freeMem"></i></h6>
+                  <h6 class="text-left"><b>Total disk: </b><i id="totDisk"></i></h6>
+                  <h6 class="text-left"><b>Free disk: </b><i id="freeDisk"></i></h6>
+                </div>
+              </div> 
+
+              <div class="row m-auto">
+                <div class="col shadow-sm mytab">
+                  <h4 class="text-left"><b>CPU: </b></h4>
+                  <canvas id="cpu" class="chart"></canvas>
+                </div>
+                <div class="col shadow-sm mytab">
+                  <h4 class="text-left"><b>Temperature: </b></h4>
+                  <canvas id="tempnow" class="chart"></canvas>
+                </div>
+              </div>
+
+              <div class="row m-auto">
+                <div class="col shadow-sm mytab">
+                  <h4 class="text-left"><b>Ram:</b></h4>
+                  <canvas id="ram" class="chart"></canvas>
+                </div>
+                <div class="col shadow-sm mytab">
+                  <h4 class="text-left"><b>Disk:</b></h4>
+                  <canvas id="disk" class="chart"></canvas>
+                </div>
+              </div> 
+            
+            </div>
+
+            <div class="tab-pane fade" id="setting" role="tabpanel" aria-labelledby="setting-tab">
+              <div class="row m-auto">
+                <div class="col shadow-sm pt-2 pb-2 mytab">
+                  <div class="h5 pt-2">Dark Mode
+                    <span class="switch switchDark darkBody float-right">
+                      <span class="switchDot"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade mt-3" id="info" role="tabpanel" aria-labelledby="info-tab">
+              <div class="row m-auto">
+                <div class="col shadow-sm pt-2 pb-2 mytab">
+                  This project was developed by LukeAz. <br>
+                  The GUI was developed in collaboration with DaveDeDave. <br><br>
+                  Github link: <br>
+                  <a href="https://github.com/LukeAz/">https://github.com/LukeAz/</a>
+                  <br><br>
+                  This software protected by MIT license.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+    <script src="/js/toggleMode.js"></script>
+    <script src="/js/chart.js"></script>
+    <script src="/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

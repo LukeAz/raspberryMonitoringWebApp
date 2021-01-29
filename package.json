@@ -1,0 +1,23 @@
+{
+  "name": "raspberryMonitoringWebApp",
+  "description": "",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "node-os-utils": "^1.3.2",
+    "os-utils": "^0.0.14",
+    "ws": "^7.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LukeAz/raspberryMonitoringWebApp.git"
+  },
+  "keywords": [],
+  "author": "LukeAz",
+  "license": "MIT"
+}

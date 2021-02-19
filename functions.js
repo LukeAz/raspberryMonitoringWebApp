@@ -21,12 +21,9 @@ module.exports = {
     initWebsocket: (PORT, HOST) => {
         return new WebSocket.Server({port: PORT, host: HOST});
     },
-    execute: async (command) => {
-        let { stdout, stderr } = await exec(command);
-        return stderr ? false : stdout
-    },
-    parseTemp: (data) => {
-        return data.substr(data.indexOf('=')+1, 4);
+    readTemperature: () => {
+        let temperature = Number(fs.readFileSync('/sys/class/thermal/thermal_zone0/temp', {encoding:'utf8', flag:'r'}));
+        return (isNaN(temperature)) ? false : (temperature/1000).toFixed(1); 
     },
     getStaticInformation: async () => {
         return {

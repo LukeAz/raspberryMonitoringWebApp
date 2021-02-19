@@ -18,9 +18,10 @@ let maxTemp = 0;
 wss.on('connection', (ws) => {
     ws.on('message', async () => {
       ws.isAlive = true;
-      let temp = await functions.execute('/opt/vc/bin/vcgencmd measure_temp');
-      temp = functions.parseTemp(temp);
-      maxTemp = (temp>maxTemp) ? temp : maxTemp;
+      let temp = functions.readTemperature();
+      if (temp>maxTemp)
+          maxTemp=temp;
+        
       let data = await functions.getInformation(maxTemp, temp);
       ws.send(JSON.stringify(data));
     });

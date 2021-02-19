@@ -2,8 +2,7 @@
  * License: MIT
  * LukeAz => https://github.com/LukeAz
 */
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+const fs = require('fs');
 const express = require('express');
 const WebSocket = require('ws');
 const os = require('node-os-utils')

@@ -38,7 +38,7 @@
           <div class="tab-content text-dark" id="v-pills-tabContent">
             <div class="tab-pane fade show active text-center mt-3" id="temp" role="tabpanel" aria-labelledby="temp-tab" style="word-break: break-all">
               <div class="row m-auto">  
-                <div class="col shadow-sm mytab">  
+                <div class="col shadow-sm mytab p-3">  
                   <h4 class="text-left"><b>Info</b></h4>
                   <h6 class="text-left"><b>Websocket: </b><i id="ws"><%= ws %></i></h6>
                   <h6 class="text-left"><b>System info: </b><i id="sysInfo"><%= sysInfo %></i></h6>
@@ -56,22 +56,22 @@
               </div> 
 
               <div class="row m-auto">
-                <div class="col shadow-sm mytab">
+                <div class="col shadow-sm mytab p-3">
                   <h4 class="text-left"><b>CPU: </b></h4>
                   <canvas id="cpu" class="chart"></canvas>
                 </div>
-                <div class="col shadow-sm mytab">
+                <div class="col shadow-sm mytab p-3">
                   <h4 class="text-left"><b>Temperature: </b></h4>
                   <canvas id="tempnow" class="chart"></canvas>
                 </div>
               </div>
 
               <div class="row m-auto">
-                <div class="col shadow-sm mytab">
+                <div class="col shadow-sm mytab p-3">
                   <h4 class="text-left"><b>Ram:</b></h4>
                   <canvas id="ram" class="chart"></canvas>
                 </div>
-                <div class="col shadow-sm mytab">
+                <div class="col shadow-sm mytab p-3">
                   <h4 class="text-left"><b>Disk:</b></h4>
                   <canvas id="disk" class="chart"></canvas>
                 </div>
